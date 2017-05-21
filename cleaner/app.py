@@ -3,7 +3,7 @@ import sys
 import pprint
 
 try:
-    from repository import Repository
+    from .repository import Repository
 except:
     from cleaner.repository import Repository
 
@@ -31,7 +31,7 @@ def scrub(repo):
     return True
 
 def revert(repo, path):
-    print(repo, path)
+    print((repo, path))
     repo.revert(path)
     return True
 
@@ -40,7 +40,7 @@ def validate(repo):
     if v == set():
         print("The registry is in a valid state")
     else:
-        print("The registry is in an invalid state. The following images are referenced but not present", v)
+        print(("The registry is in an invalid state. The following images are referenced but not present", v))
     return v
 
 def report(repo):
@@ -71,6 +71,6 @@ def main():
     if args.command == 'purge':
         return purge()
     else:
-        print("Invalid command %s" % command)
+        print(("Invalid command %s" % command))
         sys.exit(1)
             

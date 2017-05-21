@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-import app
+from . import app
 
 def main():
     app.main()

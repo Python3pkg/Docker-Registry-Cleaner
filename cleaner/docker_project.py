@@ -11,8 +11,7 @@ class DockerProject(object):
     @property
     def tagfiles(self):
         if not hasattr(self, '_tagfiles'):
-            self._tagfiles = filter(lambda tf: tf.startswith('tag_'),
-                                    os.listdir(self.path))
+            self._tagfiles = [tf for tf in os.listdir(self.path) if tf.startswith('tag_')]
         return self._tagfiles
             
     @property

@@ -36,8 +36,8 @@ def test_repository_tagfiles():
 
 
 def test_repository_referenced_images():
-    expected = {u'7f55f4c9f6942af8bc2fb123de04a7296b78536daeca5670e16893b0d0ca67ef',
-                u'ffff2732b9f49d2dbdd24545446398242d9e380dd615c4ddb61eadd4aa88ac02'}
+    expected = {'7f55f4c9f6942af8bc2fb123de04a7296b78536daeca5670e16893b0d0ca67ef',
+                'ffff2732b9f49d2dbdd24545446398242d9e380dd615c4ddb61eadd4aa88ac02'}
 
     actual = under_test.referenced_images()
 

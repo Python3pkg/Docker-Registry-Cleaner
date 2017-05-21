@@ -12,10 +12,10 @@ import tempfile
 from os.path import join, basename, isfile, getsize
 
 try:
-    from credentials import username, password
+    from .credentials import username, password
 except:
     from cleaner.credentials import username, password
-    print(os.getcwd())
+    print((os.getcwd()))
 
 
 class Repository(object):
@@ -93,7 +93,7 @@ class Repository(object):
     def remove(self, image_id):
         path = join(self.root_path, self.images, image_id)
         tmp = tempfile.mkdtemp(prefix='unused-images')
-        print("Moving %s to %s" % (path, tmp))
+        print(("Moving %s to %s" % (path, tmp)))
         shutil.move(path, tmp)
 
     def revert(self, source):
@@ -101,7 +101,7 @@ class Repository(object):
         for dirs in os.listdir(source):
             path = join(source, dirs)
             try:
-                print("Moving %s to %s" % (path, image_path))
+                print(("Moving %s to %s" % (path, image_path)))
                 shutil.move(path, image_path)
             except shutil.Error as e:
                 print(e)
